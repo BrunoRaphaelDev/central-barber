@@ -38,16 +38,71 @@ nav {
     justify-content: space-between;
     align-items: center;
     padding: 1rem 5%;
-    max-width: 1200px;
-    margin: 0 auto;
+    
+   
 }
 
-.logo {
-    font-size: 1.8rem;
-    font-weight: 700;
-    color: var(--primary-color);
-    text-decoration: none;
+header img{
+    width: 80px;
+    border-radius: 50%;
+ 
+     transition: 0.5s;
 }
+
+header img:hover{
+    transform: scale(1.05);
+       box-shadow: 0 4px 10px rgba(0, 0, 0, 0.644);
+   
+}
+
+.icons {
+    width: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    left: -100px;
+    gap: 30px;
+}
+
+.social-icon,
+.instagram-icon {
+    color: #000;
+    transition: color 0.3s ease, transform 0.3s ease;
+    cursor: pointer;
+}
+
+/* Instagram path - para aplicar gradiente no fill */
+.instagram-icon .insta-path {
+    transition: fill 0.4s ease;
+}
+
+/* Instagram hover */
+.instagram-icon:hover .insta-path {
+    fill: url(#gradInstagram);
+    cursor: pointer;
+}
+
+.instagram-icon:hover {
+    transform: scale(1.1) translateY(-4px);
+    transition: transform 0.5s ease;
+}
+
+
+/* WhatsApp path - para smooth transition no fill */
+.wpp path {
+    transition: fill 0.3s ease;
+}
+
+/* WhatsApp hover */
+.wpp:hover {
+    color: #25d366;
+    transform: scale(1.1) translateY(-4px);
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+
+
 
 .nav-links {
     display: flex;
@@ -90,10 +145,26 @@ nav {
 
 /* ===== HERO SECTION ===== */
 .hero {
-    background: linear-gradient(135deg, var(--bg-light) 0%, var(--secondary-color) 100%);
+    position: relative;
+    background: url('./assets/empregos-em-papel-de-barbeiro-vintage-e-conceito-de-carreira.jpg') no-repeat center center / cover;
     padding: 120px 5% 80px;
     text-align: center;
+    
+    z-index: 1;
+    overflow: hidden;
 }
+
+.hero::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6); /* máscara escura com 60% de opacidade */
+    z-index: -1;
+}
+
 
 .hero-content {
     max-width: 800px;
@@ -103,17 +174,18 @@ nav {
 .hero h1 {
     font-size: 3rem;
     margin-bottom: 1rem;
-    color: var(--text-dark);
-    animation: fadeInUp 1s ease;
+    color: var(--white);
+    text-shadow: 2px 2px 10px rgba(255, 255, 255, 0.795); /* destaque suave */
 }
 
 .hero p {
     font-size: 1.2rem;
     margin-bottom: 2rem;
-    color: var(--text-light);
-    animation: fadeInUp 1s ease 0.2s;
-    animation-fill-mode: both;
+    color: var(--white);
+    font-weight: bold;
+    text-shadow: 1px 1px 6px rgba(255, 255, 255, 0.808);
 }
+
 
 .cta-button {
     display: inline-block;
@@ -124,27 +196,17 @@ nav {
     text-decoration: none;
     font-weight: 600;
     transition: all 0.3s;
-    animation: fadeInUp 1s ease 0.4s;
-    animation-fill-mode: both;
-    box-shadow: 0 4px 15px rgba(148, 136, 121, 0.5);
+   
+    
+    box-shadow: 0 4px 15px rgba(148, 136, 121, 0.788);
 }
 
 .cta-button:hover {
     transform: translateY(-3px);
-    box-shadow: 0 6px 20px rgba(148, 136, 121, 0.7);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.7);
 }
 
-/* ===== ANIMAÇÕES ===== */
-@keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(30px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
+
 
 /* ===== SERVICES SECTION ===== */
 .services {
@@ -155,6 +217,10 @@ nav {
 .container {
     max-width: 1200px;
     margin: 0 auto;
+}
+
+.containerr{
+     margin: 0 60px;
 }
 
 .section-title {
@@ -177,11 +243,12 @@ nav {
     text-align: center;
     transition: transform 0.3s, box-shadow 0.3s;
     box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    cursor: pointer;
 }
 
 .service-card:hover {
     transform: translateY(-10px);
-    box-shadow: 0 10px 30px rgba(34, 40, 49, 0.1);
+    box-shadow: 0 10px 30px rgba(34, 40, 49, 0.781);
 }
 
 .service-icon {
@@ -224,9 +291,14 @@ nav {
 }
 
 .portfolio-grid .img img{
-    width: 300px;
-    height: 300px;
+    width: 400px;
+    height: 400px;
     border-radius: 10px;
+   transition: 0.5s;
+}
+
+.portfolio-grid .img img:hover{
+    transform: translateY(-5px);
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.918);
 }
 
@@ -235,7 +307,66 @@ nav {
     height: 100%;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
+    gap: 40px;
+}
+.barbeiros {
+    padding: 80px 20px;
+    background: #f9f9f9;
+    text-align: center;
+}
+
+.barbeiros .section-title {
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    color:var(--text-dark);
+}
+
+.barbeiros-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 5rem;
+}
+
+.barbeiro-card {
+    background: #fff;
+    height: 300px;
+  
+    padding: 50px auto;
+    border-radius: 15px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+
+
+.barbeiro-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+}
+
+.barbeiro-card img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-top: 10px;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.678);
+
+}
+
+.barbeiro-card h3 {
+    font-size: 1.4rem;
+    color: #333;
+    margin-bottom: 0.5rem;
+}
+
+.barbeiro-card span {
+    display: block;
+    font-size: 0.95rem;
+    color: #242323;
+    margin-bottom: 4px;
+   
 }
 
 /* ===== TESTIMONIALS ===== */
@@ -255,10 +386,17 @@ nav {
     padding: 2rem;
     border-radius: 15px;
     box-shadow: 0 5px 20px rgba(34, 40, 49, 0.05);
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.testimonial-card:hover {
+    transform: translatey(-10px);
+    box-shadow: 0 10px 30px rgba(34, 40, 49, 0.678);
 }
 
 .stars {
-    color: #d4af37; /* tom dourado */
+    color: #ffc400; /* tom dourado */
     font-size: 1.2rem;
     margin-bottom: 1rem;
 }
@@ -280,6 +418,7 @@ nav {
     background: linear-gradient(135deg, var(--white) 0%, var(--bg-light) 100%);
 }
 
+
 .cta-subtitle {
     text-align: center;
     font-size: 1.2rem;
@@ -288,12 +427,42 @@ nav {
 }
 
 .cta-content {
-    max-width: 600px;
-    margin: 0 auto;
-    text-align: center;
+    
+    
+    display: flex;
+    justify-content: space-around;
+
+  
+}
+
+.cta-content .map{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    height: 100%;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.918);
+    transition: 0.3s;
+}
+
+.map iframe{
+    width: 100%;
+   
+    border-radius: 10px;
+}
+
+
+.contact-info {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  
+     flex-direction: column;
 }
 
 .whatsapp-button {
+    position: relative; /* necessário para o ::before */
     display: inline-flex;
     align-items: center;
     gap: 15px;
@@ -304,16 +473,38 @@ nav {
     text-decoration: none;
     font-size: 1.2rem;
     font-weight: 600;
+    overflow: hidden; /* garante que o reflexo não vaze */
     transition: all 0.3s;
-    box-shadow: 0 5px 20px rgba(37, 211, 102, 0.3);
+   
     margin-bottom: 3rem;
 }
 
+.whatsapp-button::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -75%;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(
+        120deg,
+        rgba(255, 255, 255, 0.0) 0%,
+        rgba(255, 255, 255, 0.4) 50%,
+        rgba(255, 255, 255, 0.0) 100%
+    );
+    transform: skewX(-25deg);
+    transition: left 0.5s ease;
+}
+
+.whatsapp-button:hover::before {
+    left: 125%;
+}
+
 .whatsapp-button:hover {
-    background: #128c7e;
-    transform: translateY(-3px);
+    
     box-shadow: 0 8px 30px rgba(37, 211, 102, 0.4);
 }
+
 
 .whatsapp-button i {
     font-size: 1.8rem;
@@ -331,11 +522,12 @@ nav {
     align-items: center;
     gap: 10px;
     color: var(--text-dark);
-    font-weight: 500;
+    font-weight: bold;
+    font-size: 25px;
 }
 
 .info-item i {
-    font-size: 1.5rem;
+    font-size: 25px;
     color: var(--primary-color);
 }
 
@@ -364,7 +556,7 @@ footer {
     color: var(--white);
     border-radius: 50%;
     font-size: 1.3rem;
-    transition: all 0.3s;
+    transition: all 0.5s;
 }
 
 .social-links a:hover {
@@ -413,8 +605,18 @@ footer {
         padding: 2rem 0;
     }
 
+    .containerr{
+        margin: 0;
+    }
     .nav-links.active {
         right: 0;
+    }
+
+    header img{
+        width: 60px;
+        position: relative;
+        left: -80px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.726);
     }
     .logo{
         position: relative;
@@ -452,8 +654,22 @@ footer {
      }
 
     .cta-content {
-        padding: 0 20px;
+  
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
     }
+    
+    .cta-content .map {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.918);
+}
     
     .whatsapp-button {
         padding: 13px 25px;
@@ -466,5 +682,28 @@ footer {
     
     .info-item {
         font-size: 0.9rem;
+    }
+
+     .icons {
+        position: absolute;
+       
+        left: 50%;
+        transform: translateX(-50%);
+        gap: 20px;
+        width: auto;
+        justify-content: center;
+        flex-wrap: wrap;
+        padding: 10px 0;
+    }
+
+    .social-icon,
+    .instagram-icon {
+        width: 26px;
+        height: 26px;
+    }
+
+    .icons svg {
+        width: 26px;
+        height: 26px;
     }
 }

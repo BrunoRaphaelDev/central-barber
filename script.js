@@ -64,10 +64,6 @@ const observer = new IntersectionObserver((entries, observer) => {
     });
 }, observerOptions);
 
-// Observar elementos para animação
-document.querySelectorAll('.service-card, .testimonial-card, .whatsapp-button').forEach(el => {
-    observer.observe(el);
-});
 
 // ===== HEADER SCROLL EFFECT =====
 let lastScroll = 0;
@@ -76,13 +72,7 @@ const header = document.querySelector('header');
 window.addEventListener('scroll', () => {
     const currentScroll = window.pageYOffset;
 
-    // Adicionar sombra quando scrollar
-    if (currentScroll > 50) {
-        header.style.boxShadow = '0 2px 20px rgba(0,0,0,0.1)';
-    } else {
-        header.style.boxShadow = '0 2px 10px rgba(0,0,0,0.1)';
-    }
-
+  
     // Esconder/mostrar header baseado na direção do scroll (opcional)
     if (currentScroll > lastScroll && currentScroll > 100) {
         // Scroll para baixo - esconder header
@@ -105,22 +95,7 @@ setInterval(() => {
     }, 1000);
 }, 4000);
 
-// ===== ANIMAÇÃO CSS DINÂMICA =====
-const style = document.createElement('style');
-style.innerHTML = `
-    @keyframes pulse {
-        0% {
-            transform: scale(1);
-            box-shadow: 0 5px 20px rgba(0,0,0,0.2);
-        }
-        50% {
-            transform: scale(1.1);
-            box-shadow: 0 8px 30px rgba(37, 211, 102, 0.4);
-        }
-        100% {
-            transform: scale(1);
-            box-shadow: 0 5px 20px rgba(0,0,0,0.2);
-        }
-    }
-`;
-document.head.appendChild(style);
+
+
+
+ 

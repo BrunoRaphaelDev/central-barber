@@ -5,7 +5,11 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Central do Corte - Barbearia</title>
-    <link rel="shortcut icon" href="./assets/logo.jpg" type="image/x-icon" />
+    <link rel="shortcut icon" href="./assets/ChatGPT Image 3 de jul. de 2025, 15_29_03.png" type="image/x-icon" />
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
 
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
@@ -26,29 +30,84 @@
     <!-- Header -->
     <header>
         <nav>
-            <a href="#" class="logo">Central do Corte</a>
+            <a href="#" class="logo"><img src="./assets/ChatGPT Image 3 de jul. de 2025, 15_29_03.png" alt=""></a>
+
             <ul class="nav-links">
                 <li><a href="#home">Início</a></li>
                 <li><a href="#services">Serviços</a></li>
                 <li><a href="#portfolio">Portfólio</a></li>
+                <li><a href="#barbeiros">Barbeiros</a></li>
                 <li><a href="#contact">Contato</a></li>
             </ul>
+
+
+            <!-- Ícones sociais -->
+            <div class="icons">
+                <!-- Instagram -->
+                <a href="https://www.instagram.com/centraldocorte001/" target="_blank">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 16 16"
+                        class="instagram-icon">
+                        <defs>
+                            <linearGradient id="gradInstagram" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" style="stop-color:#f09433;" />
+                                <stop offset="25%" style="stop-color:#e6683c;" />
+                                <stop offset="50%" style="stop-color:#dc2743;" />
+                                <stop offset="75%" style="stop-color:#cc2366;" />
+                                <stop offset="100%" style="stop-color:#bc1888;" />
+                            </linearGradient>
+                        </defs>
+                        <path class="insta-path" fill="black"
+                            d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.9 3.9 0 0 0-1.417.923A3.9 3.9 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.9 3.9 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.9 3.9 0 0 0-.923-1.417A3.9 3.9 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599s.453.546.598.92c.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.5 2.5 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.5 2.5 0 0 1-.92-.598 2.5 2.5 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233s.008-2.388.046-3.231c.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92s.546-.453.92-.598c.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92m-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217m0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334" />
+                    </svg>
+                </a>
+
+
+                <!-- WhatsApp -->
+                <a href="https://wa.me/5513996386586?text=Olá! Gostaria de agendar um horário na Central do Corte."
+                    target="_blank">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="currentColor"
+                        class="social-icon wpp" viewBox="0 0 16 16">
+                        <path
+                            d="M13.601 2.326A7.85 7.85 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.9 7.9 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.9 7.9 0 0 0 13.6 2.326zM7.994 14.521a6.6 6.6 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.56 6.56 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592m3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.73.73 0 0 0-.529.247c-.182.198-.691.677-.691 1.654s.71 1.916.81 2.049c.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232" />
+                    </svg>
+                </a>
+            </div>
+
+            <!-- Toggle para mobile -->
             <div class="menu-toggle">
                 <i class="bx bx-menu"></i>
             </div>
         </nav>
     </header>
 
+
     <!-- Hero Section -->
     <section class="hero" id="home">
         <div class="hero-content">
-            <h1>Seu estilo começa aqui</h1>
+            <h1>Seu estilo começa AQUI.</h1>
             <p>Corte, barba e atitude para quem quer estar sempre impecável.</p>
+
+            <p class="hero-subtitle" style="margin-top: 15px; font-size: 1.1rem; color: #ffffff;">
+                Profissionais experientes, ambiente climatizado e atendimento de qualidade.
+            </p>
+
+            <ul class="hero-highlights" style="list-style: none; padding: 0; margin: 20px 0; color: #ffffff;">
+             
+                    <li><i class="bx bx-check-circle" style="color: #25d366;"></i> Cortes modernos e personalizados</li>
+                    <li><i class="bx bx-check-circle" style="color: #25d366;"></i> Barbearia com estilo e conforto</li>
+                    <li><i class="bx bx-check-circle" style="color: #25d366;"></i> Atendimento com hora marcada</li>
+               
+
+            </ul>
+
             <a href="#contact" class="cta-button">
                 <i class="bx bx-calendar"></i> Agende Seu Horário
             </a>
+
+
         </div>
     </section>
+
 
     <!-- Services Section -->
     <section class="services" id="services">
@@ -65,7 +124,7 @@
                 </div>
                 <div class="service-card">
                     <div class="service-icon">
-                       <img src="./assets/beard_1.svg" alt="">
+                        <img src="./assets/beard_1.svg" alt="">
                     </div>
                     <h3>Barba</h3>
                     <p>Barbas desenhadas com precisão e cuidados especiais para um visual impecável e renovado.</p>
@@ -113,11 +172,52 @@
                     <img src="./assets/corte04.jpg" alt="">
                     <img src="./assets/corte05.jpg" alt="">
                     <img src="./assets/corte06.jpg" alt="">
+                    <img src="./assets/corte07.jpeg" alt="">
+                    <img src="./assets/corte08.jpeg" alt="">
+                    <img src="./assets/corte09.jpeg" alt="">
                 </div>
 
             </div>
         </div>
     </section>
+
+    <!-- Barbeiros Section -->
+    <section class="barbeiros" id="barbeiros">
+        <div class="containerr">
+            <h2 class="section-title">Nossos Barbeiros</h2>
+            <p class="barbeiros-intro" style="max-width: 700px; margin: 0 auto 2rem; font-size: 1.1rem; color: #555;">
+                Conheça os profissionais que fazem a diferença no seu visual. Nossa equipe é formada por barbeiros
+                experientes, apaixonados pelo que fazem e sempre atualizados com as últimas tendências em cortes, barbas
+                e cuidados masculinos.
+            </p>
+
+            <div class="barbeiros-grid">
+                <div class="barbeiro-card">
+                    <img src="./assets/gustavo.png" alt="Barbeiro 1">
+                    <h3>Gustavo Pupo</h3>
+                    <span>Especialista em Fade</span>
+                    <span>Barba e Design</span>
+                    <span>Atendimento Premium</span>
+
+                </div>
+                <div class="barbeiro-card">
+                    <img src="./assets/lucas.png" alt="Barbeiro 2">
+                    <h3>Lucas Ramos</h3>
+                    <span>Barba e Design</span>
+                    <span>Atendimento Premium</span>
+                    <span>+5 anos de experiência</span>
+                </div>
+                <div class="barbeiro-card">
+                    <img src="./assets/menezes.jpg" alt="Barbeiro 3">
+                    <h3>Gabriel Menezes</h3>
+                    <span>Estilo Criativo</span>
+                    <span>Cortes Modernos</span>
+                    <span>Atendimento Premium</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
 
     <!-- Testimonials Section -->
     <section class="testimonials" id="testimonials">
@@ -148,43 +248,55 @@
 
     <!-- CTA Section -->
     <section class="cta-section" id="contact">
-        <div class="container">
+        <div class="containeer">
             <h2 class="section-title">Agende Seu Horário Agora</h2>
             <p class="cta-subtitle">Clique no botão abaixo e fale diretamente conosco pelo WhatsApp</p>
             <div class="cta-content">
-                <a href="https://wa.me/5511999999999?text=Olá! Gostaria de agendar um horário na Central do Corte."
-                    class="whatsapp-button" target="_blank" rel="noopener noreferrer">
-                    <i class="bx bxl-whatsapp"></i>
-                    <span>Agendar pelo WhatsApp</span>
-                </a>
+
                 <div class="contact-info">
+
+                    <a href="https://wa.me/5513996386586?text=Olá! Gostaria de agendar um horário na Central do Corte."
+                        class="whatsapp-button" target="_blank" rel="noopener noreferrer">
+                        <i class="bx bxl-whatsapp"></i>
+                        <span>Agendar pelo WhatsApp</span>
+                    </a>
                     <div class="info-item">
                         <i class="bx bx-time"></i>
                         <span>Seg-Sáb: 9h às 19h</span>
                     </div>
                     <div class="info-item">
                         <i class="bx bx-phone"></i>
-                        <span>(13) 4444-5555</span>
+                        <span>(13) 99638-6586</span>
                     </div>
                 </div>
+                <div class="map">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3650.9569920815393!2d-46.8178756!3d-24.1892804!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94d1d550d4c2d5b3%3A0xb5db9619193a77e0!2sR.%20Ana%20Maria%20Martins%20Rivera%2C%20171%20-%20Corumb%C3%A1%2C%20Itanha%C3%A9m%20-%20SP%2C%2011740-000!5e0!3m2!1spt-BR!2sbr!4v1751614464476!5m2!1spt-BR!2sbr"
+                        width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+
+
+                </div>
             </div>
-        </div>
     </section>
 
     <!-- Footer -->
     <footer>
         <div class="social-links">
-            <a href="https://www.instagram.com/centraldocorte001/" aria-label="Instagram"><i class="bx bxl-instagram"></i></a>
-            <a href="#" aria-label="Facebook"><i class="bx bxl-facebook"></i></a>
-            <a href="https://wa.me/5513996386586"  target="_blank" aria-label="WhatsApp"><i class="bx bxl-whatsapp"></i></a>
+            <a href="https://www.instagram.com/centraldocorte001/" aria-label="Instagram"><i
+                    class="bx bxl-instagram"></i></a>
+
+            <a href="https://wa.me/5513996386586?text=Olá! Gostaria de agendar um horário na Central do Corte."
+                target="_blank" aria-label="WhatsApp"><i class="bx bxl-whatsapp"></i></a>
         </div>
         <p>&copy; 2025 Central do Corte. Todos os direitos reservados.</p>
-        <p>📍 Rua das Flores, 123 - Centro | ☎️ (13) 4444-5555</p>
+        <p>📍 Rua Ana Maria Martins Riveira, 171 - Corumbá | ☎️ (13) 99638-6586</p>
     </footer>
 
     <!-- WhatsApp Float Button -->
-    <a href="https://wa.me/5513996386586" class="whatsapp-float" target="_blank" rel="noopener noreferrer"
-        aria-label="WhatsApp">
+    <a href="https://wa.me/5513996386586?text=Olá! Gostaria de agendar um horário na Central do Corte."
+        class="whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
         <i class="bx bxl-whatsapp"></i>
     </a>
 
